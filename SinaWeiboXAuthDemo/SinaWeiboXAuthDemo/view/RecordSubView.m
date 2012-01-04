@@ -36,15 +36,6 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 - (void)setInfo:(Status *)retweetedStatus
 {    
     float posY = 0;
@@ -54,6 +45,7 @@
 
     posY += 16;
     posY += 5;
+    
     nodes = [NodeFactory generateTextNodes:retweetedStatus.text];
     [richLabel richTextSetInfo:nodes];
     posY += richLabel.frame.size.height;

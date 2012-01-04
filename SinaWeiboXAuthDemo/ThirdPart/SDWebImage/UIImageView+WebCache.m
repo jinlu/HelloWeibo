@@ -26,8 +26,7 @@
 }
 
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options
-{
-    
+{    
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
 
     // Remove in progress downloader from queue
