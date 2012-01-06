@@ -46,8 +46,21 @@
 }
 
 - (void)webImageManager:(SDWebImageManager *)imageManager didFinishWithImage:(UIImage *)image
-{
-    self.image = image;    
+{    
+    self.image = image;            
+//    CGRect frame = self.frame;
+//    [self setFrame:CGRectMake(frame.origin.x, frame.origin.y, image.size.width, image.size.height)];
+    
+//    UIView *view = self;
+//    while (view != nil && ![view isKindOfClass:[UIWindow class]])
+//    {
+//        view = [view superview];
+//        if ([view isKindOfClass:[UITableView class]])
+//        {
+//            [(id)view reloadData];
+//            break;
+//        }
+//    }
 }
 
 @end

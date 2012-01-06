@@ -52,12 +52,17 @@
     
     if (retweetedStatus.thumbnailPic && [retweetedStatus.thumbnailPic length] > 0)
     {
+        [imageView setHidden:NO];
         CGRect frame = imageView.frame;
         [imageView setFrame:CGRectMake(frame.origin.x, posY, frame.size.width, frame.size.height)];
         [imageView setImageWithURL:[NSURL URLWithString:retweetedStatus.thumbnailPic]];
         posY += imageView.frame.size.height;
     }
-
+    else
+    {
+        [imageView setHidden:YES];
+    }
+    
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, posY);
 }
 
