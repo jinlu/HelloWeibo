@@ -11,7 +11,6 @@
 #import "SinaWeiboClient.h"
 #import "Status.h"
 #import "AddXAuthAccountViewController.h"
-#import "ComposeViewController.h"
 #import "UIImageView+WebCache.h"
 
 @interface RootViewController : UITableViewController <SDImageCacheDelegate>
@@ -22,9 +21,7 @@
     AddXAuthAccountViewController *addUserViewController;
 }
 
-
 @property (nonatomic, retain) IBOutlet AddXAuthAccountViewController *addUserViewController;
-@property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 
 - (void)openAuthenticateView;
 

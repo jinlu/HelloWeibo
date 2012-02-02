@@ -17,6 +17,8 @@
 		AE02FD1714B1E26E00D3FF3C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02FD1014B1E26E00D3FF3C /* UIImageView+WebCache.m */; };
 		AE9D386F14B2CAF200271C37 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D386E14B2CAF200271C37 /* RecordView.m */; };
 		AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D38A314B2D49900271C37 /* RecordSubView.m */; };
+		AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */; };
+		AEA9BCCC14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */; };
 		AEC1A34F14B19D2D000AF556 /* NodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC1A34E14B19D2D000AF556 /* NodeFactory.m */; };
 		AEFABDC514A43588006C09A0 /* ActionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC014A43588006C09A0 /* ActionLabel.m */; };
 		AEFABDC614A43588006C09A0 /* NodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC214A43588006C09A0 /* NodeParser.m */; };
@@ -66,10 +68,6 @@
 		B581E68913911E6D00F538EF /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E66B13911E6D00F538EF /* NSCharacterSet_Extensions.m */; };
 		B581E68A13911E6D00F538EF /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E66D13911E6D00F538EF /* NSDictionary_JSONExtensions.m */; };
 		B581E68B13911E6D00F538EF /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E66F13911E6D00F538EF /* NSScanner_Extensions.m */; };
-		B581E6DF13911EDE00F538EF /* AddXAuthAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E68E13911EDE00F538EF /* AddXAuthAccountViewController.m */; };
-		B581E6E013911EDE00F538EF /* AddXAuthAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B581E68F13911EDE00F538EF /* AddXAuthAccountViewController.xib */; };
-		B581E6E113911EDE00F538EF /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E69113911EDE00F538EF /* ComposeViewController.m */; };
-		B581E6E213911EDE00F538EF /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B581E69213911EDE00F538EF /* ComposeViewController.xib */; };
 		B581E6E313911EDE00F538EF /* GlobalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E69513911EDE00F538EF /* GlobalCore.m */; };
 		B581E6E413911EDE00F538EF /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E69713911EDE00F538EF /* NSDataAdditions.m */; };
 		B581E6E513911EDE00F538EF /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B581E69913911EDE00F538EF /* NSDictionaryAdditions.m */; };
@@ -128,6 +126,9 @@
 		AE9D386E14B2CAF200271C37 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
 		AE9D38A214B2D49900271C37 /* RecordSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSubView.h; sourceTree = "<group>"; };
 		AE9D38A314B2D49900271C37 /* RecordSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSubView.m; sourceTree = "<group>"; };
+		AEA9BCC814D98CFE00CE3CA7 /* AddXAuthAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddXAuthAccountViewController.h; sourceTree = "<group>"; };
+		AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddXAuthAccountViewController.m; sourceTree = "<group>"; };
+		AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddXAuthAccountViewController.xib; sourceTree = "<group>"; };
 		AEC1A34D14B19D2D000AF556 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
 		AEC1A34E14B19D2D000AF556 /* NodeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeFactory.m; sourceTree = "<group>"; };
 		AEFABDBF14A43588006C09A0 /* ActionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabel.h; sourceTree = "<group>"; };
@@ -213,12 +214,6 @@
 		B581E66D13911E6D00F538EF /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
 		B581E66E13911E6D00F538EF /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
 		B581E66F13911E6D00F538EF /* NSScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScanner_Extensions.m; sourceTree = "<group>"; };
-		B581E68D13911EDE00F538EF /* AddXAuthAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddXAuthAccountViewController.h; sourceTree = "<group>"; };
-		B581E68E13911EDE00F538EF /* AddXAuthAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddXAuthAccountViewController.m; sourceTree = "<group>"; };
-		B581E68F13911EDE00F538EF /* AddXAuthAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddXAuthAccountViewController.xib; sourceTree = "<group>"; };
-		B581E69013911EDE00F538EF /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
-		B581E69113911EDE00F538EF /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
-		B581E69213911EDE00F538EF /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		B581E69413911EDE00F538EF /* GlobalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalCore.h; sourceTree = "<group>"; };
 		B581E69513911EDE00F538EF /* GlobalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalCore.m; sourceTree = "<group>"; };
 		B581E69613911EDE00F538EF /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -531,12 +526,9 @@
 		B581E68C13911EDE00F538EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B581E68D13911EDE00F538EF /* AddXAuthAccountViewController.h */,
-				B581E68E13911EDE00F538EF /* AddXAuthAccountViewController.m */,
-				B581E68F13911EDE00F538EF /* AddXAuthAccountViewController.xib */,
-				B581E69013911EDE00F538EF /* ComposeViewController.h */,
-				B581E69113911EDE00F538EF /* ComposeViewController.m */,
-				B581E69213911EDE00F538EF /* ComposeViewController.xib */,
+				AEA9BCC814D98CFE00CE3CA7 /* AddXAuthAccountViewController.h */,
+				AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */,
+				AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -734,8 +726,7 @@
 				B581E67313911E6D00F538EF /* Default@2x.png in Resources */,
 				B581E67413911E6D00F538EF /* Icon.png in Resources */,
 				B581E67513911E6D00F538EF /* Icon@2x.png in Resources */,
-				B581E6E013911EDE00F538EF /* AddXAuthAccountViewController.xib in Resources */,
-				B581E6E213911EDE00F538EF /* ComposeViewController.xib in Resources */,
+				AEA9BCCC14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,8 +761,6 @@
 				B581E68913911E6D00F538EF /* NSCharacterSet_Extensions.m in Sources */,
 				B581E68A13911E6D00F538EF /* NSDictionary_JSONExtensions.m in Sources */,
 				B581E68B13911E6D00F538EF /* NSScanner_Extensions.m in Sources */,
-				B581E6DF13911EDE00F538EF /* AddXAuthAccountViewController.m in Sources */,
-				B581E6E113911EDE00F538EF /* ComposeViewController.m in Sources */,
 				B581E6E313911EDE00F538EF /* GlobalCore.m in Sources */,
 				B581E6E413911EDE00F538EF /* NSDataAdditions.m in Sources */,
 				B581E6E513911EDE00F538EF /* NSDictionaryAdditions.m in Sources */,
@@ -818,6 +807,7 @@
 				AE02FD1714B1E26E00D3FF3C /* UIImageView+WebCache.m in Sources */,
 				AE9D386F14B2CAF200271C37 /* RecordView.m in Sources */,
 				AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */,
+				AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

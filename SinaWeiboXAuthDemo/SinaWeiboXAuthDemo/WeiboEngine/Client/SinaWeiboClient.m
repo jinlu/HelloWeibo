@@ -20,7 +20,7 @@
 									  oAuth:(OAuth *)_oAuth {
 	SinaWeiboClient *connection = [[[SinaWeiboClient alloc]initWithDelegate:aDelegate
 																	 action:anAction
-																	  oAuth:_oAuth] autorelease];
+                                                                     oAuth:_oAuth] autorelease];
 	return connection;
 }
 

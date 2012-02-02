@@ -11,13 +11,13 @@
 
 @implementation RootViewController
 @synthesize addUserViewController;
-@synthesize composeViewController;
 
 - (void)viewDidLoad
 { 
     [super viewDidLoad];
 
-    if (!statuses) {
+    if (!statuses) 
+    {
 		statuses = [[NSMutableArray alloc] init];
 	}
 }
@@ -43,48 +43,51 @@
 	[super viewDidDisappear:animated];
 }
 
-- (void)openAuthenticateView {
+- (void)openAuthenticateView 
+{
     [self presentModalViewController: addUserViewController animated: YES];
 }
 
 
-- (void)loadData {
-	if (weiboClient) { 
+- (void)loadData 
+{
+	if (weiboClient) 
+    { 
 		return;
 	}
+    
 	weiboClient = [[SinaWeiboClient alloc] initWithDelegate:self 
 											   action:@selector(timelineDidReceive:obj:)];
 	[weiboClient getFollowedTimelineSinceID:0 
 							 startingAtPage:0 count:500];
 }
 
-- (void)loadTimeline {
+- (void)loadTimeline 
+{
     WeiboEngine *engine = [WeiboEngine engine];
-	if (!engine.isAuthorized) {
+	if (!engine.isAuthorized) 
+    {
         [self openAuthenticateView];
     }
-	else {
+	else 
+    {
 		NSLog(@"Authenicated for %@..", engine.user.screenName);
-		[self loadData];
-		
-		/*
-         SinaWeiboClient *followClient = [[SinaWeiboClient alloc] initWithTarget:self 
-         engine:_engine
-         action:@selector(followDidReceive:obj:)];
-         [followClient follow:1727858283]; // follow the author!
-		 */ 
+		[self loadData];		
 	}
 }
 
 
-- (void)followDidReceive:(SinaWeiboClient*)sender obj:(NSObject*)obj {
-	if (sender.hasError) {		
+- (void)followDidReceive:(SinaWeiboClient*)sender obj:(NSObject*)obj 
+{
+	if (sender.hasError) 
+    {		
 		NSLog(@"followDidReceive error!!!, errorMessage:%@, errordetail:%@"
 			  , sender.errorMessage, sender.errorDetail);
         return;
     }
 	
-    if (obj == nil || ![obj isKindOfClass:[NSDictionary class]]) {
+    if (obj == nil || ![obj isKindOfClass:[NSDictionary class]]) 
+    {
 		NSLog(@"followDidReceive data format error.%@", @"");
         return;
     }
@@ -95,37 +98,43 @@
 	NSLog(@"follow user success:.%@", responseUser.screenName);
 }
 
-
-
-
 - (void)timelineDidReceive:(SinaWeiboClient*)sender obj:(NSObject*)obj
 {
 	NSLog(@"begin timelineDidReceive");
-    if (sender.hasError) {
+    
+    if (sender.hasError) 
+    {
 		NSLog(@"timelineDidReceive error!!!, errorMessage:%@, errordetail:%@"
 			  , sender.errorMessage, sender.errorDetail);
 		//[sender alert];
-        if (sender.statusCode == 401) {
+        if (sender.statusCode == 401) 
+        {
             [self openAuthenticateView];
         }
     }
 	weiboClient = nil;
     
-    if (obj == nil || ![obj isKindOfClass:[NSArray class]]) {
+    if (obj == nil || ![obj isKindOfClass:[NSArray class]]) 
+    {
         return;
     }
+    
 	NSArray *ary = (NSArray*)obj;  
 	
 	[statuses removeAllObjects];
 	
-	for (int i = [ary count] - 1; i >= 0; --i) {
+	for (int i = [ary count] - 1; i >= 0; --i) 
+    {
 		NSDictionary *dic = (NSDictionary*)[ary objectAtIndex:i];
-		if (![dic isKindOfClass:[NSDictionary class]]) {
+		if (![dic isKindOfClass:[NSDictionary class]]) 
+        {
 			continue;
 		}
+        
 		Status* sts = [Status statusWithJsonDictionary:[ary objectAtIndex:i]];
 		[statuses insertObject:sts atIndex:0];
 	}		
+    
 	[self.tableView reloadData];
 }
 
@@ -154,7 +163,8 @@
     static NSString *CellIdentifier = @"Cell";
     
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    if (cell == nil) 
+    {
         cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
 									   reuseIdentifier:CellIdentifier] autorelease];
     }
@@ -249,13 +259,14 @@
     [super dealloc];
 }
 
-- (IBAction)refresh:(id)sender {
+- (IBAction)refresh:(id)sender 
+{
 	[self loadData];
 }
 
-- (IBAction)compose:(id)sender {
-	[self presentModalViewController:composeViewController animated:YES];
-	[composeViewController newTweet];
+- (IBAction)compose:(id)sender 
+{
+    
 }
 
 - (void)imageDownloadSuccess:(UIView *)view

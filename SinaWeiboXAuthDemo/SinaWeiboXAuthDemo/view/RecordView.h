@@ -22,7 +22,7 @@
 
 @property(nonatomic,retain) RichTextLabel *nameLabel;
 @property(nonatomic,retain) RichTextLabel *contentLabel;
-@property(nonatomic,retain) UIImageView *logoImageView;
+@property(nonatomic,retain) UIImageView   *logoImageView;
 
 - (void)setInfo:(Status *)status;
 
