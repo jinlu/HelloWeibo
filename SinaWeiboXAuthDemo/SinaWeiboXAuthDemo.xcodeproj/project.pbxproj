@@ -16,6 +16,7 @@
 		AE02FD1614B1E26E00D3FF3C /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02FD0E14B1E26E00D3FF3C /* UIButton+WebCache.m */; };
 		AE02FD1714B1E26E00D3FF3C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02FD1014B1E26E00D3FF3C /* UIImageView+WebCache.m */; };
 		AE96AABE14E0275200C4BB0F /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96AABD14E0275200C4BB0F /* EGORefreshTableHeaderView.m */; };
+		AE96AAC114E02FB300C4BB0F /* WeiboHotRepost.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96AAC014E02FB300C4BB0F /* WeiboHotRepost.m */; };
 		AE9D386F14B2CAF200271C37 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D386E14B2CAF200271C37 /* RecordView.m */; };
 		AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D38A314B2D49900271C37 /* RecordSubView.m */; };
 		AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */; };
@@ -126,6 +127,8 @@
 		AE02FD1014B1E26E00D3FF3C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		AE96AABC14E0275200C4BB0F /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		AE96AABD14E0275200C4BB0F /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		AE96AABF14E02FB300C4BB0F /* WeiboHotRepost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboHotRepost.h; sourceTree = "<group>"; };
+		AE96AAC014E02FB300C4BB0F /* WeiboHotRepost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboHotRepost.m; sourceTree = "<group>"; };
 		AE9D386D14B2CAF200271C37 /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
 		AE9D386E14B2CAF200271C37 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
 		AE9D38A214B2D49900271C37 /* RecordSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSubView.h; sourceTree = "<group>"; };
@@ -659,6 +662,8 @@
 				B581E6C413911EDE00F538EF /* SinaWeiboClient.m */,
 				B581E6C513911EDE00F538EF /* WeiboConnection.h */,
 				B581E6C613911EDE00F538EF /* WeiboConnection.m */,
+				AE96AABF14E02FB300C4BB0F /* WeiboHotRepost.h */,
+				AE96AAC014E02FB300C4BB0F /* WeiboHotRepost.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -838,6 +843,7 @@
 				AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */,
 				AEA9BCD014DA320A00CE3CA7 /* WeiboLogin.m in Sources */,
 				AE96AABE14E0275200C4BB0F /* EGORefreshTableHeaderView.m in Sources */,
+				AE96AAC114E02FB300C4BB0F /* WeiboHotRepost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

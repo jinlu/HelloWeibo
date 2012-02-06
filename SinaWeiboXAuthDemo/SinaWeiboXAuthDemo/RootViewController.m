@@ -63,10 +63,9 @@
 		return;
 	}
     
-	weiboClient = [[SinaWeiboClient alloc] initWithDelegate:self 
-											   action:@selector(timelineDidReceive:obj:)];
-	[weiboClient getFollowedTimelineSinceID:0 
-							 startingAtPage:0 count:500];
+	weiboClient = [[WeiboHotRepost alloc] initWithDelegate:self 
+                                                    action:@selector(timelineDidReceive:obj:)];
+	[weiboClient getHotRepost];
 }
 
 - (void)loadTimeline 
@@ -84,7 +83,7 @@
 }
 
 
-- (void)followDidReceive:(SinaWeiboClient*)sender obj:(NSObject*)obj 
+- (void)followDidReceive:(WeiboHotRepost*)sender obj:(NSObject*)obj 
 {
 	if (sender.hasError) 
     {		
@@ -105,7 +104,7 @@
 	NSLog(@"follow user success:.%@", responseUser.screenName);
 }
 
-- (void)timelineDidReceive:(SinaWeiboClient*)sender obj:(NSObject*)obj
+- (void)timelineDidReceive:(WeiboHotRepost*)sender obj:(NSObject*)obj
 {    
     if (sender.hasError) 
     {		

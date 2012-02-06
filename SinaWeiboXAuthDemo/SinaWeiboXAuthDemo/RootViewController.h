@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WeiboEngine.h"
 #import "WeiboLogin.h"
-#import "SinaWeiboClient.h"
+#import "WeiboHotRepost.h"
 #import "Status.h"
 #import "AddXAuthAccountViewController.h"
 #import "UIImageView+WebCache.h"
@@ -22,7 +22,7 @@
     UIView                          *loadingView;
     UIActivityIndicatorView         *indicatorView;
 	NSMutableArray                  *statuses;
-    SinaWeiboClient                 *weiboClient;    
+    WeiboHotRepost                  *weiboClient;    
     EGORefreshTableHeaderView       *refreshHeaderView;
 }
 
