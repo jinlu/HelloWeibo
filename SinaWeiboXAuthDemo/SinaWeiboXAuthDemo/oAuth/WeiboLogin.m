@@ -42,7 +42,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(WeiboLogin);
 	
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
 							  @"shijl424", @"username",
-							  @"shijl424", @"password",
+							  @"42420026", @"password",
 							  nil];
 	
 	NSInvocationOperation *operation = [[NSInvocationOperation alloc]

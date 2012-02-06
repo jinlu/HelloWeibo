@@ -13,14 +13,17 @@
 #import "Status.h"
 #import "AddXAuthAccountViewController.h"
 #import "UIImageView+WebCache.h"
+#import "EGORefreshTableHeaderView.h"
 
-@interface RootViewController : UIViewController <SDImageCacheDelegate, WeiboLoginDelegate, UITableViewDataSource, UITableViewDelegate>
+@class EGORefreshTableHeaderView;
+@interface RootViewController : UIViewController <SDImageCacheDelegate, WeiboLoginDelegate, UITableViewDataSource, UITableViewDelegate, EGORefreshTableHeaderDelegate>
 {
     UITableView                     *myTableView;
     UIView                          *loadingView;
     UIActivityIndicatorView         *indicatorView;
 	NSMutableArray                  *statuses;
     SinaWeiboClient                 *weiboClient;    
+    EGORefreshTableHeaderView       *refreshHeaderView;
 }
 
 @property(nonatomic,retain) IBOutlet UITableView *myTableView;
@@ -30,7 +33,5 @@
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
 
 - (IBAction)refresh:(id)sender;
-
-- (IBAction)compose:(id)sender;
 
 @end

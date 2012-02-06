@@ -15,6 +15,7 @@
 		AE02FD1514B1E26E00D3FF3C /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02FD0C14B1E26E00D3FF3C /* SDWebImagePrefetcher.m */; };
 		AE02FD1614B1E26E00D3FF3C /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02FD0E14B1E26E00D3FF3C /* UIButton+WebCache.m */; };
 		AE02FD1714B1E26E00D3FF3C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE02FD1014B1E26E00D3FF3C /* UIImageView+WebCache.m */; };
+		AE96AABE14E0275200C4BB0F /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96AABD14E0275200C4BB0F /* EGORefreshTableHeaderView.m */; };
 		AE9D386F14B2CAF200271C37 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D386E14B2CAF200271C37 /* RecordView.m */; };
 		AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D38A314B2D49900271C37 /* RecordSubView.m */; };
 		AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */; };
@@ -123,6 +124,8 @@
 		AE02FD0E14B1E26E00D3FF3C /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		AE02FD0F14B1E26E00D3FF3C /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		AE02FD1014B1E26E00D3FF3C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		AE96AABC14E0275200C4BB0F /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		AE96AABD14E0275200C4BB0F /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		AE9D386D14B2CAF200271C37 /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
 		AE9D386E14B2CAF200271C37 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
 		AE9D38A214B2D49900271C37 /* RecordSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSubView.h; sourceTree = "<group>"; };
@@ -335,6 +338,15 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		AE96AAB214E01E9800C4BB0F /* EGORefresh */ = {
+			isa = PBXGroup;
+			children = (
+				AE96AABC14E0275200C4BB0F /* EGORefreshTableHeaderView.h */,
+				AE96AABD14E0275200C4BB0F /* EGORefreshTableHeaderView.m */,
+			);
+			path = EGORefresh;
+			sourceTree = "<group>";
+		};
 		AE9D386C14B2CAF200271C37 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +487,7 @@
 		B581E63C13911E6D00F538EF /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				AE96AAB214E01E9800C4BB0F /* EGORefresh */,
 				AE02FCFE14B1E26E00D3FF3C /* SDWebImage */,
 				B581E63D13911E6D00F538EF /* ASIHTTPRequest */,
 				B581E65613911E6D00F538EF /* RegexKitLite.h */,
@@ -824,6 +837,7 @@
 				AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */,
 				AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */,
 				AEA9BCD014DA320A00CE3CA7 /* WeiboLogin.m in Sources */,
+				AE96AABE14E0275200C4BB0F /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,11 @@
 
 #import "RootViewController.h"
 #import "CustomCell.h"
+#import "EGORefreshTableHeaderView.h"
 
 @interface RootViewController (private)
-- (void)weiboLogin;
+-(void)weiboLogin;
+-(void)setLoadingAnimation:(bool)animated;
 @end
 
 @implementation RootViewController
@@ -26,6 +28,12 @@
     {
 		statuses = [[NSMutableArray alloc] init];
 	}
+    
+    //添加刷新状态显示视图，隐藏在TableView后面
+    refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - myTableView.bounds.size.height, 320.0f, myTableView.bounds.size.height)];
+    [refreshHeaderView setDelegate:self];
+    refreshHeaderView.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+    [self.myTableView addSubview:refreshHeaderView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -131,6 +139,7 @@
 	}		
     
     [loadingView setHidden:YES];
+    [self setLoadingAnimation:NO];
 	[myTableView reloadData];
 }
 
@@ -205,7 +214,10 @@
     myTableView = nil;
     [loadingView release];
     loadingView = nil;
-    [self setIndicatorView:nil];
+    [self setIndicatorView:nil];    
+    [refreshHeaderView removeFromSuperview];
+    [refreshHeaderView release];
+	refreshHeaderView = nil;
     [super viewDidUnload];
 }
 
@@ -219,14 +231,39 @@
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+	[refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
+{
+    [self loadData];
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
+{
+#warning isloading 
+    return NO;
+}
+
+
 - (IBAction)refresh:(id)sender 
 {
 	[self loadData];
-}
-
-- (IBAction)compose:(id)sender 
-{
-    
 }
 
 - (void)imageDownloadSuccess:(UIView *)view
@@ -247,6 +284,7 @@
     [[WeiboLogin sharedInstance] setDelegate:self];    
     [loadingView setHidden:NO];
     [indicatorView startAnimating];
+    [self setLoadingAnimation:YES];
 }
 
 - (void)weibologinSuccess
@@ -267,5 +305,18 @@
     [alertView show];
     [alertView release];
     [loadingView setHidden:YES];
+    [self setLoadingAnimation:NO];
 }
+
+-(void)setLoadingAnimation:(bool)animated
+{
+	if (animated)
+	{
+	}
+	else
+	{
+        [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.myTableView];
+	}
+}
+
 @end
