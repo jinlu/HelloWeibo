@@ -8,26 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import "WeiboEngine.h"
+#import "WeiboLogin.h"
 #import "SinaWeiboClient.h"
 #import "Status.h"
 #import "AddXAuthAccountViewController.h"
 #import "UIImageView+WebCache.h"
 
-@interface RootViewController : UITableViewController <SDImageCacheDelegate>
+@interface RootViewController : UIViewController <SDImageCacheDelegate, WeiboLoginDelegate, UITableViewDataSource, UITableViewDelegate>
 {
-	NSMutableArray *statuses;
-    SinaWeiboClient *weiboClient;
-    
-    AddXAuthAccountViewController *addUserViewController;
+    UITableView                     *myTableView;
+    UIView                          *loadingView;
+    UIActivityIndicatorView         *indicatorView;
+	NSMutableArray                  *statuses;
+    SinaWeiboClient                 *weiboClient;    
 }
 
-@property (nonatomic, retain) IBOutlet AddXAuthAccountViewController *addUserViewController;
+@property(nonatomic,retain) IBOutlet UITableView *myTableView;
 
-- (void)openAuthenticateView;
+@property(nonatomic,retain) IBOutlet UIView *loadingView;
+
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
 
 - (IBAction)refresh:(id)sender;
 
 - (IBAction)compose:(id)sender;
-
 
 @end

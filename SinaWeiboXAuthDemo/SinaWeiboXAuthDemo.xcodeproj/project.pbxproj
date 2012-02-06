@@ -19,6 +19,7 @@
 		AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9D38A314B2D49900271C37 /* RecordSubView.m */; };
 		AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */; };
 		AEA9BCCC14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */; };
+		AEA9BCD014DA320A00CE3CA7 /* WeiboLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCCF14DA320A00CE3CA7 /* WeiboLogin.m */; };
 		AEC1A34F14B19D2D000AF556 /* NodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC1A34E14B19D2D000AF556 /* NodeFactory.m */; };
 		AEFABDC514A43588006C09A0 /* ActionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC014A43588006C09A0 /* ActionLabel.m */; };
 		AEFABDC614A43588006C09A0 /* NodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC214A43588006C09A0 /* NodeParser.m */; };
@@ -129,8 +130,11 @@
 		AEA9BCC814D98CFE00CE3CA7 /* AddXAuthAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddXAuthAccountViewController.h; sourceTree = "<group>"; };
 		AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddXAuthAccountViewController.m; sourceTree = "<group>"; };
 		AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddXAuthAccountViewController.xib; sourceTree = "<group>"; };
+		AEA9BCCE14DA320A00CE3CA7 /* WeiboLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboLogin.h; sourceTree = "<group>"; };
+		AEA9BCCF14DA320A00CE3CA7 /* WeiboLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboLogin.m; sourceTree = "<group>"; };
 		AEC1A34D14B19D2D000AF556 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
 		AEC1A34E14B19D2D000AF556 /* NodeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeFactory.m; sourceTree = "<group>"; };
+		AECE863614DE1E420016A0DF /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		AEFABDBF14A43588006C09A0 /* ActionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabel.h; sourceTree = "<group>"; };
 		AEFABDC014A43588006C09A0 /* ActionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabel.m; sourceTree = "<group>"; };
 		AEFABDC114A43588006C09A0 /* NodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeParser.h; sourceTree = "<group>"; };
@@ -342,6 +346,23 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		AEA9BCCD14DA313000CE3CA7 /* oAuth */ = {
+			isa = PBXGroup;
+			children = (
+				AEA9BCCE14DA320A00CE3CA7 /* WeiboLogin.h */,
+				AEA9BCCF14DA320A00CE3CA7 /* WeiboLogin.m */,
+			);
+			path = oAuth;
+			sourceTree = "<group>";
+		};
+		AECE863514DE1E420016A0DF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AECE863614DE1E420016A0DF /* SynthesizeSingleton.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AEFABDBE14A43588006C09A0 /* RichText */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +390,7 @@
 		B5098301138E46D10027348B = {
 			isa = PBXGroup;
 			children = (
+				AECE863514DE1E420016A0DF /* Utils */,
 				AEFABDBE14A43588006C09A0 /* RichText */,
 				B5098316138E46D20027348B /* SinaWeiboXAuthDemo */,
 				B581E63513911E6D00F538EF /* Resources */,
@@ -408,12 +430,12 @@
 		B5098316138E46D20027348B /* SinaWeiboXAuthDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AEA9BCCD14DA313000CE3CA7 /* oAuth */,
 				AE9D386C14B2CAF200271C37 /* view */,
 				AEFABDCC14A45324006C09A0 /* Cell */,
 				B581E68C13911EDE00F538EF /* Controllers */,
 				B581E69313911EDE00F538EF /* Global */,
 				B581E6AA13911EDE00F538EF /* Models */,
-				B581E6BC13911EDE00F538EF /* Utils */,
 				B581E6BD13911EDE00F538EF /* WeiboEngine */,
 				B509831F138E46D20027348B /* SinaWeiboXAuthDemoAppDelegate.h */,
 				B5098320138E46D20027348B /* SinaWeiboXAuthDemoAppDelegate.m */,
@@ -598,13 +620,6 @@
 				B581E6B113911EDE00F538EF /* Statement.m */,
 			);
 			path = DB;
-			sourceTree = "<group>";
-		};
-		B581E6BC13911EDE00F538EF /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		B581E6BD13911EDE00F538EF /* WeiboEngine */ = {
@@ -808,6 +823,7 @@
 				AE9D386F14B2CAF200271C37 /* RecordView.m in Sources */,
 				AE9D38A414B2D49900271C37 /* RecordSubView.m in Sources */,
 				AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */,
+				AEA9BCD014DA320A00CE3CA7 /* WeiboLogin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

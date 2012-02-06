@@ -6,6 +6,9 @@
 //  Copyright (c) 2012年 Openlab. All rights reserved.
 //
 
+#define TOP (10)
+#define LEFT (5)
+
 #import "RecordSubView.h"
 #import "NodeFactory.h"
 #import "UIImageView+WebCache.h"
@@ -19,17 +22,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        float posY = 0;
-        nameLabel = [[[RichTextLabel alloc] initWithFrame:CGRectMake(0, posY, self.frame.size.width, 20)] autorelease];
+        [self setBackgroundColor:[UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1]];
+        float posY = TOP;
+        nameLabel = [[[RichTextLabel alloc] initWithFrame:CGRectMake(LEFT, posY, self.frame.size.width-LEFT, 20)] autorelease];
         [self addSubview:nameLabel];
 
         posY += 16;
         posY += 5;
-        richLabel = [[[RichTextLabel alloc] initWithFrame:CGRectMake(0, posY, self.frame.size.width, 200)] autorelease];
+        richLabel = [[[RichTextLabel alloc] initWithFrame:CGRectMake(LEFT, posY, self.frame.size.width-LEFT, 200)] autorelease];
         [self addSubview:richLabel];
         posY += richLabel.frame.size.height;
         
-        imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(0, posY, 100, 100)] autorelease];
+        imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(LEFT, posY, 100, 100)] autorelease];
         [self addSubview:imageView];
 
     }
@@ -38,7 +42,7 @@
 
 - (void)setInfo:(Status *)retweetedStatus
 {    
-    float posY = 0;
+    float posY = TOP;
     NSArray *nodes = [NodeFactory generateTextNodes:retweetedStatus.user.screenName];
     [nameLabel richTextSetInfo:nodes];
     posY += nameLabel.frame.size.height;
@@ -57,6 +61,7 @@
         [imageView setFrame:CGRectMake(frame.origin.x, posY, frame.size.width, frame.size.height)];
         [imageView setImageWithURL:[NSURL URLWithString:retweetedStatus.thumbnailPic]];
         posY += imageView.frame.size.height;
+        posY += TOP;
     }
     else
     {

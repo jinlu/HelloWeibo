@@ -9,8 +9,14 @@
 #import "RootViewController.h"
 #import "CustomCell.h"
 
+@interface RootViewController (private)
+- (void)weiboLogin;
+@end
+
 @implementation RootViewController
-@synthesize addUserViewController;
+@synthesize myTableView;
+@synthesize loadingView;
+@synthesize indicatorView;
 
 - (void)viewDidLoad
 { 
@@ -43,12 +49,6 @@
 	[super viewDidDisappear:animated];
 }
 
-- (void)openAuthenticateView 
-{
-    [self presentModalViewController: addUserViewController animated: YES];
-}
-
-
 - (void)loadData 
 {
 	if (weiboClient) 
@@ -67,7 +67,7 @@
     WeiboEngine *engine = [WeiboEngine engine];
 	if (!engine.isAuthorized) 
     {
-        [self openAuthenticateView];
+        [self weiboLogin];
     }
 	else 
     {
@@ -99,17 +99,12 @@
 }
 
 - (void)timelineDidReceive:(SinaWeiboClient*)sender obj:(NSObject*)obj
-{
-	NSLog(@"begin timelineDidReceive");
-    
+{    
     if (sender.hasError) 
-    {
-		NSLog(@"timelineDidReceive error!!!, errorMessage:%@, errordetail:%@"
-			  , sender.errorMessage, sender.errorDetail);
-		//[sender alert];
+    {		
         if (sender.statusCode == 401) 
         {
-            [self openAuthenticateView];
+            [self weiboLogin];
         }
     }
 	weiboClient = nil;
@@ -135,7 +130,8 @@
 		[statuses insertObject:sts atIndex:0];
 	}		
     
-	[self.tableView reloadData];
+    [loadingView setHidden:YES];
+	[myTableView reloadData];
 }
 
 /*
@@ -167,6 +163,7 @@
     {
         cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
 									   reuseIdentifier:CellIdentifier] autorelease];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
 
 	Status *sts = [statuses objectAtIndex:indexPath.row];        
@@ -182,48 +179,6 @@
     [cell setInfo:sts];
     return cell.frame.size.height;
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -246,16 +201,21 @@
 
 - (void)viewDidUnload
 {
+    [myTableView release];
+    myTableView = nil;
+    [loadingView release];
+    loadingView = nil;
+    [self setIndicatorView:nil];
     [super viewDidUnload];
-
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
 }
 
 - (void)dealloc
 {
     [statuses release];
     [weiboClient release];
+    [myTableView release];
+    [loadingView release];
+    [indicatorView release];
     [super dealloc];
 }
 
@@ -271,7 +231,7 @@
 
 - (void)imageDownloadSuccess:(UIView *)view
 {
-    [self.tableView reloadData];
+    [myTableView reloadData];
 }
 
 - (void)imageDownloadFail:(UIView *)view
@@ -279,4 +239,33 @@
     
 }
 
+#pragma mark - Log In
+
+- (void)weiboLogin
+{
+    [[WeiboLogin sharedInstance] loginStart];
+    [[WeiboLogin sharedInstance] setDelegate:self];    
+    [loadingView setHidden:NO];
+    [indicatorView startAnimating];
+}
+
+- (void)weibologinSuccess
+{
+    [self loadData];		
+}
+
+- (void)weibologinFail
+{
+    NSString *title = @"认证失败";
+	NSString *msg = @"登录失败，请重试！";
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Close"
+                                              otherButtonTitles:nil];
+    [alertView show];
+    [alertView release];
+    [loadingView setHidden:YES];
+}
 @end
