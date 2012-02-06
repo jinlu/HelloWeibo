@@ -12,7 +12,6 @@
 
 @interface RootViewController (private)
 -(void)weiboLogin;
--(void)setLoadingAnimation:(bool)animated;
 @end
 
 @implementation RootViewController
@@ -139,7 +138,7 @@
 	}		
     
     [loadingView setHidden:YES];
-    [self setLoadingAnimation:NO];
+    [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.myTableView];
 	[myTableView reloadData];
 }
 
@@ -284,7 +283,6 @@
     [[WeiboLogin sharedInstance] setDelegate:self];    
     [loadingView setHidden:NO];
     [indicatorView startAnimating];
-    [self setLoadingAnimation:YES];
 }
 
 - (void)weibologinSuccess
@@ -305,18 +303,7 @@
     [alertView show];
     [alertView release];
     [loadingView setHidden:YES];
-    [self setLoadingAnimation:NO];
-}
-
--(void)setLoadingAnimation:(bool)animated
-{
-	if (animated)
-	{
-	}
-	else
-	{
-        [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.myTableView];
-	}
+    [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.myTableView];
 }
 
 @end
