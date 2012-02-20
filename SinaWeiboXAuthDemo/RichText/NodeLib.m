@@ -71,12 +71,4 @@
     return nodes;
 }
 
-+ (NSArray *)generateTextNodes:(NSString *)text
-{
-    NSArray *nodes = [NSArray array]; 
-    NSDictionary * node = [NodeLib textNode:text];
-    nodes = [nodes arrayByAddingObject:node];
-    return nodes;
-}
-
 @end

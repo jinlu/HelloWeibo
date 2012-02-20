@@ -23,7 +23,7 @@
 }
 
 @property (nonatomic, assign) id <ActionLabelDelegate> delegate;
-@property (nonatomic, retain) UIColor * oldColor;
+@property (nonatomic, retain) UIColor *oldColor;
 @property (nonatomic, retain) id attachData;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

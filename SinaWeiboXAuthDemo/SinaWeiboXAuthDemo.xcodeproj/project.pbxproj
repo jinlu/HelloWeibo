@@ -385,10 +385,10 @@
 				AEFABDC014A43588006C09A0 /* ActionLabel.m */,
 				AEFABDC114A43588006C09A0 /* NodeParser.h */,
 				AEFABDC214A43588006C09A0 /* NodeParser.m */,
-				AEFABDC314A43588006C09A0 /* RichTextLabel.h */,
-				AEFABDC414A43588006C09A0 /* RichTextLabel.m */,
 				AEC1A34D14B19D2D000AF556 /* NodeLib.h */,
 				AEC1A34E14B19D2D000AF556 /* NodeLib.m */,
+				AEFABDC314A43588006C09A0 /* RichTextLabel.h */,
+				AEFABDC414A43588006C09A0 /* RichTextLabel.m */,
 			);
 			path = RichText;
 			sourceTree = "<group>";

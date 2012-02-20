@@ -43,15 +43,13 @@
 - (void)setInfo:(Status *)retweetedStatus
 {    
     float posY = TOP;
-    NSArray *nodes = [NodeLib generateTextNodes:retweetedStatus.user.screenName];
-    [nameLabel richTextSetInfo:nodes];
+    [nameLabel richTextSetTextNode:retweetedStatus.user.screenName];
     posY += nameLabel.frame.size.height;
 
     posY += 16;
     posY += 5;
     
-    nodes = [NodeLib generateTextNodes:retweetedStatus.text];
-    [richLabel richTextSetInfo:nodes];
+    [richLabel richTextSetTextNode:retweetedStatus.text];
     posY += richLabel.frame.size.height;
     
     if (retweetedStatus.thumbnailPic && [retweetedStatus.thumbnailPic length] > 0)

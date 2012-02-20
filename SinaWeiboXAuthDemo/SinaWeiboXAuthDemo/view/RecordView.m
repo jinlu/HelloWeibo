@@ -59,12 +59,10 @@
     [logoImageView setImageWithURL:[NSURL URLWithString:logoUrl]];
     
     float posY = 0;
-    NSArray *nodes = [NodeLib generateTextNodes:status.user.screenName];
-    [nameLabel richTextSetInfo:nodes];
+    [nameLabel richTextSetTextNode:status.user.screenName];
     posY += logoImageView.frame.size.height; 
-    nodes = [NodeLib generateTextNodes:status.text];
     
-    [contentLabel richTextSetInfo:nodes];
+    [contentLabel richTextSetTextNode:status.text];
     posY += contentLabel.frame.size.height;
 
     if (status.thumbnailPic && [status.thumbnailPic length] > 0)

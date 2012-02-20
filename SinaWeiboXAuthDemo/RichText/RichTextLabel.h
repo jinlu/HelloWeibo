@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ActionLabel.h"
+#import "NodeParser.h"
 
 #define COLOR(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 #define COLOR_AT COLOR(87,107,149,1)
@@ -58,9 +59,18 @@ static NSString * arryFace[] =
     
 }
 
-- (void) richTextSetDemoInfo;
-- (void) richTextSetInfo:(NSArray *)nodes;
-- (void) richTextSetInfo:(NSArray *)nodes 
+- (void)richTextSetDemoInfo;
+
+// node (文本，表情，链接)
+// nodes node array
+- (void)richTextSetNodes:(NSArray *)nodes;
+- (void)richTextSetNodes:(NSArray *)nodes 
               startPoint:(CGPoint)startPoint 
           endPointReturn:(CGPoint*)endPointReturn;
+
+- (void)richTextSetTextNode:(NSString *)text;
+// (星星)
+- (void)richTextSetFaceNode:(NSString *)faceType;
+- (void)richTextSetLinkNode:(NSString *)url;
+
 @end

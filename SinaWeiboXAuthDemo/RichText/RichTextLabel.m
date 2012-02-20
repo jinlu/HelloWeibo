@@ -11,7 +11,7 @@
 #import "NodeLib.h"
 
 @interface RichTextLabel (private)
-- (void) createRichLabel:(HTOKENARRY)tokens font:(UIFont*)font totoalHeight:(CGFloat)totalHeight;
+- (void)createRichLabel:(HTOKENARRY)tokens font:(UIFont*)font totoalHeight:(CGFloat)totalHeight;
 @end
 
 @implementation RichTextLabel
@@ -73,38 +73,6 @@
     }
     
     return nil;
-}
-
-- (void)richTextSetInfo:(NSArray *)nodes
-{    
-    CGPoint startPoint = CGPointMake(0, 0);
-    CGPoint endPontReturn = CGPointMake(0, 0);
-
-    [self richTextSetInfo:nodes startPoint:startPoint endPointReturn:&endPontReturn];
-}
-
-- (void)richTextSetInfo:(NSArray *)nodes startPoint:(CGPoint)startPoint endPointReturn:(CGPoint*)endPointReturn
-{    
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-    UIFont * sysFont =  [UIFont systemFontOfSize:SYSTEM_FONT_SIZE];
-    CGFloat totalHeight = 0;
-
-    assert(endPointReturn != nil);
-    if (endPointReturn != nil)
-    {
-        HTOKENARRY tokens = [self nodeToToken:nodes font:sysFont heightReturn:&totalHeight startPoint:startPoint endPointReturn:endPointReturn];
-
-        [self createRichLabel:tokens font:sysFont totoalHeight:totalHeight];
-    }
-    
-    [pool release];
-}
-
-- (void)richTextSetDemoInfo
-{
-    NSArray *nodes = [NodeLib generateDemoNodes];
-    [self richTextSetInfo:nodes];
 }
 
 - (void)createRichLabel:(HTOKENARRY)tokens font:(UIFont*)sysFont totoalHeight:(CGFloat)totalHeight
@@ -329,11 +297,76 @@
             }   
         }
     }
-        
+    
     // set height 
     CGRect frame = self.frame;
     frame.size.height = totalHeight;
     self.frame = frame;
+}
+
+#pragma mark Set Node
+- (void)richTextSetNodes:(NSArray *)nodes
+{    
+    CGPoint startPoint = CGPointMake(0, 0);
+    CGPoint endPontReturn = CGPointMake(0, 0);
+
+    [self richTextSetNodes:nodes startPoint:startPoint endPointReturn:&endPontReturn];
+}
+
+- (void)richTextSetNodes:(NSArray *)nodes startPoint:(CGPoint)startPoint endPointReturn:(CGPoint*)endPointReturn
+{    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+    UIFont * sysFont =  [UIFont systemFontOfSize:SYSTEM_FONT_SIZE];
+    CGFloat totalHeight = 0;
+
+    assert(endPointReturn != nil);
+    if (endPointReturn != nil)
+    {
+        HTOKENARRY tokens = [self nodeToToken:nodes font:sysFont heightReturn:&totalHeight startPoint:startPoint endPointReturn:endPointReturn];
+
+        [self createRichLabel:tokens font:sysFont totoalHeight:totalHeight];
+    }
+    
+    [pool release];
+}
+
+- (void)richTextSetTextNode:(NSString *)text
+{
+    if (text)
+    {
+        NSDictionary *node = [NodeLib textNode:text];
+        NSArray *arry = [NSArray arrayWithObject:node];
+        [self richTextSetNodes:arry];    
+    }
+}
+
+// (星星)
+- (void)richTextSetFaceNode:(NSString *)faceType
+{
+    NSDictionary *node = [NodeLib faceNode:faceType];
+    NSArray *arry = [NSArray arrayWithObject:node];
+    [self richTextSetNodes:arry];    
+}
+
+- (void)richTextSetLinkNode:(NSString *)url
+{
+    NSDictionary *node = [NodeLib faceNode:url];
+    NSArray *arry = [NSArray arrayWithObject:node];
+    [self richTextSetNodes:arry];        
+}
+
+- (void)richTextSetDemoInfo
+{
+    NSArray *nodes = [NodeLib generateDemoNodes];
+    [self richTextSetNodes:nodes];
+}
+
+#pragma mark Life Cycle
+
+- (void)dealloc
+{
+    [super dealloc];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -355,11 +388,7 @@
 }
 */
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
+#pragma mark Action Label Delegate
 - (void)actionLabel:(ActionLabel *)actionLabel attachData:(NSDictionary *)data
 {
     NSString * url = [data valueForKey:@"link"];

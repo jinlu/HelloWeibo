@@ -17,7 +17,5 @@
                   prefix:(NSString *)prefix;
 + (NSDictionary *)linkNode:(NSString *)url;
 + (NSArray *)generateDemoNodes;
-+ (NSArray *)generateTextNodes:(NSString *)text;
-
 
 @end
