@@ -37,7 +37,9 @@
 - (void)restoreColor
 {
     if (oldColor != nil)
-     [self setTextColor:oldColor];
+    {
+        [self setTextColor:oldColor];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

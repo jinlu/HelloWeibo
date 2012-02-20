@@ -51,7 +51,6 @@ static NSString * arryFace[] =
     @"(星星)",
 };
 
-
 #define HTOKENARRY NSArray* 
 
 @interface RichTextLabel : UIView <ActionLabelDelegate> 
