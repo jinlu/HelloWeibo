@@ -27,19 +27,18 @@
 }
 
 
-- (void) dealloc
+- (void)dealloc
 {
     [oldColor release];
     [attachData release];
     [super dealloc]; 
 }
 
-- (void) restoreColor
+- (void)restoreColor
 {
     if (oldColor != nil)
      [self setTextColor:oldColor];
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

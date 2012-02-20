@@ -59,8 +59,8 @@ static NSString * arryFace[] =
 }
 
 - (void) richTextSetDemoInfo;
-- (void) richTextSetInfo:(NSArray *)tokens;
-- (void) richTextSetInfo:(NSArray *)tokens 
+- (void) richTextSetInfo:(NSArray *)nodes;
+- (void) richTextSetInfo:(NSArray *)nodes 
               startPoint:(CGPoint)startPoint 
           endPointReturn:(CGPoint*)endPointReturn;
 @end

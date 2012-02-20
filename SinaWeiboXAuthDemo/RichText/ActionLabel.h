@@ -17,14 +17,12 @@
 
 @interface ActionLabel : UILabel 
 {
-    id      attachData;
-    UIColor * oldColor;
-    
-    id <ActionLabelDelegate> delegate;
+    id                          attachData;
+    UIColor                     *oldColor;
+    id <ActionLabelDelegate>    delegate;
 }
 
 @property (nonatomic, assign) id <ActionLabelDelegate> delegate;
-
 @property (nonatomic, retain) UIColor * oldColor;
 @property (nonatomic, retain) id attachData;
 
