@@ -22,7 +22,7 @@
 		AEA9BCCB14D98CFE00CE3CA7 /* AddXAuthAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCC914D98CFE00CE3CA7 /* AddXAuthAccountViewController.m */; };
 		AEA9BCCC14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */; };
 		AEA9BCD014DA320A00CE3CA7 /* WeiboLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9BCCF14DA320A00CE3CA7 /* WeiboLogin.m */; };
-		AEC1A34F14B19D2D000AF556 /* NodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC1A34E14B19D2D000AF556 /* NodeFactory.m */; };
+		AEC1A34F14B19D2D000AF556 /* NodeLib.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC1A34E14B19D2D000AF556 /* NodeLib.m */; };
 		AEFABDC514A43588006C09A0 /* ActionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC014A43588006C09A0 /* ActionLabel.m */; };
 		AEFABDC614A43588006C09A0 /* NodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC214A43588006C09A0 /* NodeParser.m */; };
 		AEFABDC714A43588006C09A0 /* RichTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFABDC414A43588006C09A0 /* RichTextLabel.m */; };
@@ -138,8 +138,8 @@
 		AEA9BCCA14D98CFE00CE3CA7 /* AddXAuthAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddXAuthAccountViewController.xib; sourceTree = "<group>"; };
 		AEA9BCCE14DA320A00CE3CA7 /* WeiboLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboLogin.h; sourceTree = "<group>"; };
 		AEA9BCCF14DA320A00CE3CA7 /* WeiboLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboLogin.m; sourceTree = "<group>"; };
-		AEC1A34D14B19D2D000AF556 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
-		AEC1A34E14B19D2D000AF556 /* NodeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeFactory.m; sourceTree = "<group>"; };
+		AEC1A34D14B19D2D000AF556 /* NodeLib.h */ = {isa = PBXFileReference; fileEncoding = 4; path = NodeLib.h; sourceTree = "<group>"; };
+		AEC1A34E14B19D2D000AF556 /* NodeLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeLib.m; sourceTree = "<group>"; };
 		AECE863614DE1E420016A0DF /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		AEFABDBF14A43588006C09A0 /* ActionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionLabel.h; sourceTree = "<group>"; };
 		AEFABDC014A43588006C09A0 /* ActionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionLabel.m; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 				AEFABDC214A43588006C09A0 /* NodeParser.m */,
 				AEFABDC314A43588006C09A0 /* RichTextLabel.h */,
 				AEFABDC414A43588006C09A0 /* RichTextLabel.m */,
-				AEC1A34D14B19D2D000AF556 /* NodeFactory.h */,
-				AEC1A34E14B19D2D000AF556 /* NodeFactory.m */,
+				AEC1A34D14B19D2D000AF556 /* NodeLib.h */,
+				AEC1A34E14B19D2D000AF556 /* NodeLib.m */,
 			);
 			path = RichText;
 			sourceTree = "<group>";
@@ -830,7 +830,7 @@
 				AEFABDC614A43588006C09A0 /* NodeParser.m in Sources */,
 				AEFABDC714A43588006C09A0 /* RichTextLabel.m in Sources */,
 				AEFABDCF14A45324006C09A0 /* CustomCell.m in Sources */,
-				AEC1A34F14B19D2D000AF556 /* NodeFactory.m in Sources */,
+				AEC1A34F14B19D2D000AF556 /* NodeLib.m in Sources */,
 				AE02FD1114B1E26E00D3FF3C /* SDImageCache.m in Sources */,
 				AE02FD1214B1E26E00D3FF3C /* SDWebImageDecoder.m in Sources */,
 				AE02FD1314B1E26E00D3FF3C /* SDWebImageDownloader.m in Sources */,

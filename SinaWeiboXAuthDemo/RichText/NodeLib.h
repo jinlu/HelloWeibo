@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NodeFactory : NSObject
+@interface NodeLib : NSObject
 
 + (NSDictionary *)textNode:(NSString *)text;
 + (NSDictionary *)faceNode:(NSString *)faceText;

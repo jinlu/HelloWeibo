@@ -7,7 +7,7 @@
 //
 
 #import "RecordView.h"
-#import "NodeFactory.h"
+#import "NodeLib.h"
 #import "UIImageView+WebCache.h"
 
 @implementation RecordView
@@ -59,10 +59,10 @@
     [logoImageView setImageWithURL:[NSURL URLWithString:logoUrl]];
     
     float posY = 0;
-    NSArray *nodes = [NodeFactory generateTextNodes:status.user.screenName];
+    NSArray *nodes = [NodeLib generateTextNodes:status.user.screenName];
     [nameLabel richTextSetInfo:nodes];
     posY += logoImageView.frame.size.height; 
-    nodes = [NodeFactory generateTextNodes:status.text];
+    nodes = [NodeLib generateTextNodes:status.text];
     
     [contentLabel richTextSetInfo:nodes];
     posY += contentLabel.frame.size.height;

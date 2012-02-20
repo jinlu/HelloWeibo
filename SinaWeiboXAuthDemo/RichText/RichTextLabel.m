@@ -8,7 +8,7 @@
 
 #import "RichTextLabel.h"
 #import "NodeParser.h"
-#import "NodeFactory.h"
+#import "NodeLib.h"
 
 @interface RichTextLabel (private)
 - (void) createRichLabel:(HTOKENARRY)tokens font:(UIFont*)font totoalHeight:(CGFloat)totalHeight;
@@ -103,7 +103,7 @@
 
 - (void)richTextSetDemoInfo
 {
-    NSArray *nodes = [NodeFactory generateDemoNodes];
+    NSArray *nodes = [NodeLib generateDemoNodes];
     [self richTextSetInfo:nodes];
 }
 

@@ -82,28 +82,6 @@
 	}
 }
 
-
-- (void)followDidReceive:(WeiboHotRepost*)sender obj:(NSObject*)obj 
-{
-	if (sender.hasError) 
-    {		
-		NSLog(@"followDidReceive error!!!, errorMessage:%@, errordetail:%@"
-			  , sender.errorMessage, sender.errorDetail);
-        return;
-    }
-	
-    if (obj == nil || ![obj isKindOfClass:[NSDictionary class]]) 
-    {
-		NSLog(@"followDidReceive data format error.%@", @"");
-        return;
-    }
-    
-    
-    NSDictionary *dic = (NSDictionary*)obj;
-	User *responseUser = [[[User alloc]initWithJsonDictionary:dic] autorelease];
-	NSLog(@"follow user success:.%@", responseUser.screenName);
-}
-
 - (void)timelineDidReceive:(WeiboHotRepost*)sender obj:(NSObject*)obj
 {    
     if (sender.hasError) 

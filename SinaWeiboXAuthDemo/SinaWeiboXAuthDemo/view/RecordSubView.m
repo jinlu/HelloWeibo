@@ -10,7 +10,7 @@
 #define LEFT (5)
 
 #import "RecordSubView.h"
-#import "NodeFactory.h"
+#import "NodeLib.h"
 #import "UIImageView+WebCache.h"
 
 @implementation RecordSubView
@@ -43,14 +43,14 @@
 - (void)setInfo:(Status *)retweetedStatus
 {    
     float posY = TOP;
-    NSArray *nodes = [NodeFactory generateTextNodes:retweetedStatus.user.screenName];
+    NSArray *nodes = [NodeLib generateTextNodes:retweetedStatus.user.screenName];
     [nameLabel richTextSetInfo:nodes];
     posY += nameLabel.frame.size.height;
 
     posY += 16;
     posY += 5;
     
-    nodes = [NodeFactory generateTextNodes:retweetedStatus.text];
+    nodes = [NodeLib generateTextNodes:retweetedStatus.text];
     [richLabel richTextSetInfo:nodes];
     posY += richLabel.frame.size.height;
     
